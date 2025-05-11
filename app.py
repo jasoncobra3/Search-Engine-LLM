@@ -6,11 +6,9 @@ from langchain.agents import initialize_agent, AgentType
 from langchain.callbacks import  StreamlitCallbackHandler
 from dotenv import load_dotenv
 import os
-
 ### Arxiv and Wikipedia Tools
 arxiv_wrapper=ArxivAPIWrapper(top_k_results=1,doc_content_chars_max=200)
 arxiv=ArxivQueryRun(api_wrapper=arxiv_wrapper)
-
 wiki_wrapper=WikipediaAPIWrapper(top_k_results=1,doc_content_chars_max=200)
 wiki=WikipediaQueryRun(api_wrapper=wiki_wrapper)
 
@@ -21,8 +19,6 @@ st.title("🔎 LangChain - Chat with search")
 In this example, we're using `StreamlitCallbackHandler` to display the thoughts and actions of an agent in an interactive Streamlit app.
 Try more LangChain 🤝 Streamlit Agent examples at [github.com/langchain-ai/streamlit-agent](https://github.com/langchain-ai/streamlit-agent).
 """
-
-
 ### Sidebar for API key
 st.sidebar.title("API Key")
 api_key=st.sidebar.text_input("Enter your Groq API Key:",type="password")
@@ -31,7 +27,6 @@ if "messages" not in st.session_state:
     st.session_state["messages"]=[
         {"role":"assisstant","content":"Hi,I'm a Chatbot who can search the Web. How can I help you ?"}
     ]
-    
     
 for msg in st.session_state.messages:
     st.chat_message(msg['role']).write(msg['content'])
