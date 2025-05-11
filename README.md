@@ -1,9 +1,10 @@
----
-license: apache-2.0
-title: Search Engine
-sdk: streamlit
-emoji: 🏃
+title: Search Engine Llm
+emoji: 🚀
 colorFrom: red
-colorTo: yellow
-short_description: Search Engine With LLM
----
+colorTo: red
+sdk: docker
+app_port: 8501
+tags:
+  - streamlit
+pinned: false
+short_description: Streamlit template space
